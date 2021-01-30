@@ -1,0 +1,63 @@
+{
+  "env": {
+    "browser": true
+  },
+  "extends": [
+    "airbnb",
+    "plugin:prettier/recommended",
+    "prettier/react"
+  ],
+  "plugins": [
+    "react-hooks",
+    "prettier"
+  ],
+  "parser": "babel-eslint",
+  "rules": {
+    "prettier/prettier": "error",
+    "arrow-body-style": "off",
+    "prefer-arrow-callback": "off",
+    "react/jsx-one-expression-per-line": [
+      2,
+      {
+        "allow": "single-child"
+      }
+    ],
+    "react/jsx-filename-extension": [
+      0,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
+    "react/state-in-constructor": 0,
+    "react/prop-types": 0,
+    "react/jsx-props-no-spreading": 0,
+    "import/prefer-default-export": 0,
+    "prefer-const": 0,
+    "no-bitwise": 0,
+    "no-console": 0,
+    "import/no-unresolved": 0,
+    "max-len": [
+      "warn",
+      {
+        "code": 150,
+        "tabWidth": 2,
+        "ignoreUrls": true,
+        "ignoreComments": true,
+        "ignoreRegExpLiterals": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true
+      }
+    ],
+    "import/no-cycle": 0,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "legacyDecorators": true
+    }
+  }
+}
