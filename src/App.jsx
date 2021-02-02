@@ -5,7 +5,11 @@ import "./styles/index.less";
 
 export default () => (
   <>
-    <h1>GitHub Search</h1>
-    <RepositoriesListPage />
+    <div className="app-wrapper">
+      <header className="header">
+        <h1>GitHub repositories search </h1>
+      </header>
+      <RepositoriesListPage />
+    </div>
   </>
 );

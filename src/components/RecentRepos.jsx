@@ -1,14 +1,16 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import "../styles/components/recentRepos.less";
 
-export default () => {
+export default ({ onRecentClick }) => {
   const reposName = useSelector(({ allRepos }) => Object.keys(allRepos));
 
   return (
-    <div>
+    <div className="recent-repos">
       {reposName.map((name, index) => (
-        // eslint-disable-next-line react/no-array-index-key
-        <h1 key={index}>{name}</h1>
+        <button type="button" key={index} onClick={() => onRecentClick(name)}>
+          {name}
+        </button>
       ))}
     </div>
   );

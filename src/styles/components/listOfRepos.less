@@ -1,0 +1,34 @@
+.repos-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.repos-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  border: 1px solid #d3d3d3;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  &__element {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    &:not(:last-child) {
+      border-bottom: 1px solid #d3d3d3;
+    }
+  }
+}
+.button {
+  padding: 15px;
+  border-radius: 25px;
+  outline: none;
+  border: 1px solid #d3d3d3;
+  background-color: #4B6692;
+  color: #ffffff;
+  cursor:  pointer;
+  margin-bottom: 20px;
+}

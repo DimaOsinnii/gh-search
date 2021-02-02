@@ -24,6 +24,10 @@ module.exports = () => ({
         use: ["babel-loader"],
       },
       {
+        test: /\.svg$/,
+        use: ["@svgr/webpack"],
+      },
+      {
         test: /\.html$/,
         use: [
           {
