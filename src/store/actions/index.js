@@ -19,7 +19,7 @@ export const setRepositoriesFailure = (error) => ({
 });
 
 export const getData = (name, page) => {
-  const url = `repositories?q=${name}&sort=stars&page=${page}&per_page=30`;
+  const url = `repositories?q=${name}in:name&sort=stars&page=${page}&per_page=30`;
 
   return (dispatch) => {
     dispatch(getRepositories());
