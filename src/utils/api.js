@@ -1,9 +1,19 @@
 import axios from "axios";
 
-const instance = axios.create({
-  baseURL: "https://api.github.com/search",
-});
+axios.defaults.baseURL = "https://api.github.com";
 
-export default function getMethod(url) {
-  return instance.get(url).catch(console.log);
-}
+export const urls = {
+  get: {
+    REPOS: "search/",
+  },
+};
+const { CancelToken } = axios;
+
+let newCancelToken;
+export const getMethod = (url) => {
+  if (typeof newCancelToken !== typeof undefined) {
+    newCancelToken.cancel();
+  }
+  newCancelToken = CancelToken.source();
+  return axios.get(url, { cancelToken: newCancelToken.token });
+};

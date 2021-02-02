@@ -1,4 +1,4 @@
-import getMethod from "../../utils/api";
+import { urls, getMethod } from "../../utils/api";
 
 import * as actions from "../../constants";
 
@@ -19,10 +19,14 @@ export const setRepositoriesFailure = (error) => ({
 });
 
 export const getData = (name, page) => {
+  const url = `repositories?q=${name}&sort=stars&page=${page}&per_page=30`;
+
   return (dispatch) => {
     dispatch(getRepositories());
-    return getMethod(`repositories?q=${name}&page=${page}&per_page=30`)
+    getMethod(urls.get.REPOS + url)
       .then((res) => dispatch(setRepositories(res.data.items, name, page)))
-      .catch((err) => dispatch(setRepositoriesFailure(err)));
+      .catch((err) => {
+        dispatch(setRepositoriesFailure(err));
+      });
   };
 };

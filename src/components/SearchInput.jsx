@@ -1,9 +1,14 @@
 import React from "react";
 
-export default () => {
+export default ({ onNameChange, value }) => {
   return (
     <>
-      <input type="text" />
+      <input
+        value={value}
+        type="text"
+        placeholder="Enter repository name"
+        onChange={onNameChange}
+      />
     </>
   );
 };
