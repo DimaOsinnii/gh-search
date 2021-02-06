@@ -12,7 +12,7 @@ export default ({ repos, inputValue }) => {
   const isFetching = useSelector((state) => state.isFetching);
 
   if (!repos) {
-    return <p>There are no repos yet</p>;
+    return <p>There are no repos yet!</p>;
   }
   const handleLoadMore = () => dispatch(getData(inputValue, repos.page + 1));
 
